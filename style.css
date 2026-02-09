@@ -1,0 +1,186 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #0f172a;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #e5e7eb;
+}
+
+/* ---------- HEADER ---------- */
+header {
+    height: 100px;
+    background: #020617;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+}
+
+.logo {
+    height: 70px;
+}
+
+header ul {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+header a {
+    text-decoration: none;
+    color: #e5e7eb;
+    font-weight: bold;
+}
+
+.iconeuser {
+    height: 36px;
+}
+
+/* ---------- RESPONSIVO HEADER ---------- */
+@media (max-width: 900px) {
+    header {
+        padding: 0 20px;
+    }
+
+    header ul {
+        gap: 18px;
+    }
+}
+
+@media (max-width: 650px) {
+    .iconeuser {
+        display: none;
+    }
+
+    header {
+        justify-content: center;
+    }
+
+    header nav {
+        margin-left: 20px;
+    }
+}
+
+/* ---------- MAIN ---------- */
+.main {
+    padding: 50px;
+}
+
+.containers {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+/* ---------- CARD ---------- */
+.card {
+    background: #020617;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+}
+
+/* ---------- SLIDER ---------- */
+.card-header {
+    position: relative;
+    height: 360px;
+}
+
+.card-header img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.card-header img.active {
+    opacity: 1;
+}
+
+/* ---------- SETAS ---------- */
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(15, 23, 42, 0.7);
+    border: none;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.arrow.left { left: 12px; }
+.arrow.right { right: 12px; }
+
+.arrow:hover {
+    background: rgba(15, 23, 42, 0.9);
+}
+
+/* ---------- CARD BODY ---------- */
+.card-body {
+    padding: 18px;
+}
+
+.card-body h3 {
+    font-size: 18px;
+    margin-bottom: 4px;
+}
+
+.categoria,
+.endereco {
+    font-size: 14px;
+    opacity: 0.85;
+}
+
+/* ---------- FOOTER ---------- */
+.card-footer {
+    margin-top: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.status {
+    padding: 4px 12px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.aberto {
+    background: #16a34a;
+    color: #ecfdf5;
+}
+
+.fechado {
+    background: #dc2626;
+    color: #fff;
+}
+
+.btn {
+    background: #d4af37;
+    color: #ffffff;
+    padding: 6px 16px;
+    border-radius: 999px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: #facc15;
+}
