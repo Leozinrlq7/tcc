@@ -77,7 +77,7 @@ window.addEventListener("load", atualizarHorarios);
 confirmarBtn.addEventListener("click", () => {
     const hora = horaSelect.value;
     if(!hora || hora === "Nenhum horário disponível"){
-        alert("Selecione um horário válido!");
+        window.uiToast?.("Selecione um horário válido.");
         return;
     }
 
@@ -85,6 +85,6 @@ confirmarBtn.addEventListener("click", () => {
     lista.push({ prestador: prestadorSelecionado, data: dataInput.value, hora });
     localStorage.setItem("agendamentos", JSON.stringify(lista));
 
-    alert("Agendamento confirmado ✅");
+    window.uiToast?.("Agendamento confirmado ✅");
     window.location.href = "agendamentos.html";
 });

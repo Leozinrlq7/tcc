@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login - FlexAgenda</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header>
+  <img src="img/estrutural/logobranca.png" class="logo" alt="FlexAgenda">
+  <nav>
+    <ul>
+      <li><a href="#" id="btnEntrarSemLogin">Entrar sem login</a></li>
+    </ul>
+  </nav>
+  <img src="img/estrutural/user.png" class="iconeuser" alt="Usuário">
+</header>
+
+<section class="auth-container">
+  <h2 class="auth-title">Conta FlexAgenda</h2>
+
+  <div id="msgBox" class="auth-msg"></div>
+
+  <div class="auth-card">
+    <div class="auth-botao">
+      <a href="#login" id="tabLogin">Login</a>
+    </div>
+
+    <div id="secLogin">
+      <label for="loginEmail">E-mail</label>
+      <input id="loginEmail" type="email" placeholder="Seuemail@exemplo.com" autocomplete="email" />
+
+      <label for="loginSenha">Senha</label>
+      <input id="loginSenha" type="password" placeholder="••••••••" autocomplete="current-password" />
+
+      <button id="btnLogin" type="button">Entrar</button>
+    </div>
+
+    <hr class="auth-divider">
+         <div class="auth-botao">
+           <a href="#cadastro" id="tabCadastro">Cadastro</a>
+    </div>
+    <div id="secCadastro">
+      <label for="cadNome">Nome</label>
+      <input id="cadNome" type="text" placeholder="Seu nome" autocomplete="name" />
+
+      <label for="cadEmail">E-mail</label>
+      <input id="cadEmail" type="email" placeholder="seuemail@exemplo.com" autocomplete="email" />
+
+      <label for="cadSenha">Senha</label>
+      <input id="cadSenha" type="password" placeholder="Crie uma senha" autocomplete="new-password" />
+
+      <button id="btnCadastrar" type="button">Cadastrar</button>
+
+      <p class="aviso-auth">
+        Você pode entrar sem login, mas para <strong>agendar</strong> é necessário ter conta.
+      </p>
+    </div>
+  </div>
+</section>
+
+<script src="global.js"></script>
+<script src="login.js"></script>
+</body>
+</html>
