@@ -4,6 +4,15 @@ const dataInput = document.getElementById("data");
 const horaSelect = document.getElementById("hora");
 const confirmarBtn = document.getElementById("confirmar");
 
+
+// ===== GUARDA DE LOGIN (NÃO PERMITE AGENDAR COMO GUEST) =====
+const authMode = localStorage.getItem("authMode");
+if(authMode !== "user"){
+    localStorage.setItem("authRedirectMessage", "Para agendar um horário, é necessário fazer login.");
+    window.location.href = "login.html#login";
+    throw new Error("AUTH_REQUIRED");
+}
+
 // ===== LISTA DE PRESTADORES COM HORÁRIOS =====
 const prestadores = [
   { nome: "Manxinha do Corte", horarios: ["09:00","10:00","11:00","14:00","15:00"] },

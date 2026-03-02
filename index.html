@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FlexAgenda</title>
+    
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -13,15 +14,56 @@
 
     <nav>
         <ul>
-            <li><a href="#" id="btnInicio">Início</a></li>
+            <li><a href="#" id="logoHome">Início</a></li>
             <li><a href="#" id="btnAgendamentos">Agendamentos</a></li>
-            <li><a href="#" id="btnPesquisar">🔍</a></li>
+            <li><a href="#" id="btnPesquisar">
+<span class="search-ico" aria-hidden="true">
+  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M10.5 18a7.5 7.5 0 1 1 0-15 7.5 7.5 0 0 1 0 15Z" stroke="currentColor" stroke-width="2"/>
+    <path d="M16.5 16.5 21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+  </svg>
+</span>
+</a></li>
         </ul>
     </nav>
     <img src="img/estrutural/user.png" class="iconeuser" alt="Usuário">
 </header>
 
 <section class="main">
+
+
+<div class="pesquisa-topo" id="pesquisaTopo" hidden>
+    <div class="pesquisa-box">
+        <span class="pesquisa-ico" aria-hidden="true">🔎</span>
+        <input id="inputPesquisar" type="text" placeholder="Pesquisar estabelecimento..." autocomplete="off" />
+        <button id="btnFecharPesquisar" class="pesquisa-fechar" type="button" aria-label="Fechar pesquisa">×</button>
+    </div>
+    <div class="pesquisa-hint">Digite para pesquisar pelo nome.</div>
+</div>
+
+
+
+<div class="filtro-topo">
+    <button id="btnFiltro" class="btn-filtro" type="button" aria-expanded="false">
+        <span class="btn-filtro-icone">☰</span> Filtrar
+    </button>
+</div>
+
+<div id="painelFiltro" class="painel-filtro" hidden>
+    <div class="painel-filtro-linha">
+        <label for="selectCategoria">Categoria</label>
+        <select id="selectCategoria">
+            <option value="__all__">Todas</option>
+        </select>
+    </div>
+
+    <div class="painel-filtro-acoes">
+        <button id="btnAplicarFiltro" class="btn-filtro-prim" type="button">Aplicar</button>
+        <button id="btnLimparFiltro" class="btn-filtro-sec" type="button">Limpar</button>
+    </div>
+</div>
+
+
 <div class="containers">
 
 <!-- 1 -->
@@ -164,7 +206,8 @@
     </div>
 </div>
 
-<!-- 8 (ERRO CORRIGIDO) -->
+<!-- 8 -->
+
 <div class="card">
     <div class="card-header slider">
         <img src="img/gusta3.png" class="active">
@@ -185,6 +228,7 @@
 </div>
 
 <!-- 9 -->
+
 <div class="card">
     <div class="card-header slider">
         <img src="img/nail1.png" class="active">
@@ -203,8 +247,8 @@
         </div>
     </div>
 </div>
-
 <!-- 10 -->
+
 <div class="card">
     <div class="card-header slider">
         <img src="img/enrq1.png" class="active">
@@ -225,6 +269,7 @@
 </div>
 
 <!-- 11 -->
+
 <div class="card">
     <div class="card-header slider">
         <img src="img/hg1.png" class="active">

@@ -1,32 +1,38 @@
 <!DOCTYPE html>
 
 <html lang="pt-BR">
+
 <head>
-<meta charset="utf-8"/>
+    <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Agendar Serviço - FlexAgenda</title>
-<link href="style.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-<header>
-<img class="logo" id="logoHome" src="img/estrutural/logobranca.png"/>
-<nav>
-<ul>
-<li><a href="#" id="btnVoltar">Voltar</a></li>
-</ul>
-</nav>
-</header>
-<section class="agendar-container">
-<h2>Agendar Serviço</h2>
-<div class="agendamento-card">
-<p><strong>Prestador:</strong> <span id="prestadorNome"></span></p>
-<label for="data">Escolha a data:</label>
-<input id="data" type="date"/>
-<label for="hora">Escolha o horário:</label>
-<select id="hora"></select>
-<button id="confirmar">Confirmar Agendamento</button>
-</div>
-</section>
+    <header>
+        <img class="logo" id="logoHome" src="img/estrutural/logobranca.png" />
+        <nav>
+            <ul>
+                <li><a href="#" id="btnVoltar">Voltar</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="agendar-container">
+        <h2>Agendar Serviço</h2>
+        <div class="agendamento-card">
+            <p><strong>Prestador:</strong> <span id="prestadorNome"></span></p>
+            <label for="data">Escolha a data:</label>
+            <input id="data" type="date" />
+            <label for="hora">Escolha o horário:</label>
+            <select id="hora"></select>
+            <button id="confirmar">Confirmar Agendamento</button>
+        </div>
+    </section>
 
 
-<script src="global.js"></script><script src="agendar.js"></script></body>
+    <script src="global.js"></script>
+    <script src="agendar.js"></script>
+</body>
+
 </html>

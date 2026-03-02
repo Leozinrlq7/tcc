@@ -32,6 +32,16 @@ function clearMsg(){
   msgBox.textContent = "";
 }
 
+// ====== Mensagem de redirecionamento (login obrigatório) ======
+(function(){
+  const msg = localStorage.getItem("authRedirectMessage");
+  if(msg){
+    showMsg(msg, "warn");
+    localStorage.removeItem("authRedirectMessage");
+  }
+})();
+
+
 // ====== Abas (hash) ======
 const tabLogin = document.getElementById("tabLogin");
 const tabCadastro = document.getElementById("tabCadastro");
