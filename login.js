@@ -26,21 +26,24 @@ function showMsg(text, type="info"){
     msgBox.style.borderColor = "rgba(229,231,235,0.20)";
   }
 }
+
+// ====== AVISO AO REDIRECIONAR (LOGIN NECESSÁRIO) ======
+(function(){
+  const notice = sessionStorage.getItem("loginNotice");
+  if(notice){
+    // garante tab login
+    if((window.location.hash || "").toLowerCase() !== "#login"){
+      window.location.hash = "#login";
+    }
+    showMsg(notice, "warn");
+    sessionStorage.removeItem("loginNotice");
+  }
+})();
 function clearMsg(){
   if(!msgBox) return;
   msgBox.style.display = "none";
   msgBox.textContent = "";
 }
-
-// ====== Mensagem de redirecionamento (login obrigatório) ======
-(function(){
-  const msg = localStorage.getItem("authRedirectMessage");
-  if(msg){
-    showMsg(msg, "warn");
-    localStorage.removeItem("authRedirectMessage");
-  }
-})();
-
 
 // ====== Abas (hash) ======
 const tabLogin = document.getElementById("tabLogin");

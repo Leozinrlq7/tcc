@@ -94,20 +94,21 @@ document.querySelectorAll(".btn").forEach(botao => {
         const card = this.closest(".card");
         const nome = card.querySelector("h3").textContent;
 
-        // salva prestador no localStorage
-        localStorage.setItem("prestadorSelecionado", nome);
-
-        // se estiver em modo guest (ou sem login), exige login antes de agendar
+        // bloqueia agendamento para guest
         const mode = localStorage.getItem("authMode");
         if(mode !== "user"){
-            localStorage.setItem("authRedirectMessage", "Para agendar, é necessário fazer login.");
+            sessionStorage.setItem("loginNotice", "É necessário fazer login para agendar.");
             window.location.href = "login.html#login";
             return;
         }
 
+        // salva prestador no localStorage
+        localStorage.setItem("prestadorSelecionado", nome);
+
         window.location.href = "agendar.html";
     });
 });
+
 // ===== FILTRO POR CATEGORIA (HOME) =====
 (function(){
     const btnFiltro = document.getElementById("btnFiltro");

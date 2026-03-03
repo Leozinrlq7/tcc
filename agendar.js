@@ -1,17 +1,17 @@
+// ===== GUARDA: LOGIN OBRIGATÓRIO PARA AGENDAR =====
+(function requireLoginForScheduling(){
+  const mode = localStorage.getItem("authMode");
+  if(mode !== "user"){
+    sessionStorage.setItem("loginNotice", "É necessário fazer login para agendar.");
+    window.location.href = "login.html#login";
+  }
+})();
+
 // ===== ELEMENTOS =====
 const prestadorNomeEl = document.getElementById("prestadorNome");
 const dataInput = document.getElementById("data");
 const horaSelect = document.getElementById("hora");
 const confirmarBtn = document.getElementById("confirmar");
-
-
-// ===== GUARDA DE LOGIN (NÃO PERMITE AGENDAR COMO GUEST) =====
-const authMode = localStorage.getItem("authMode");
-if(authMode !== "user"){
-    localStorage.setItem("authRedirectMessage", "Para agendar um horário, é necessário fazer login.");
-    window.location.href = "login.html#login";
-    throw new Error("AUTH_REQUIRED");
-}
 
 // ===== LISTA DE PRESTADORES COM HORÁRIOS =====
 const prestadores = [
@@ -84,6 +84,12 @@ window.addEventListener("load", atualizarHorarios);
 
 // ===== CONFIRMAR AGENDAMENTO =====
 confirmarBtn.addEventListener("click", () => {
+    const mode = localStorage.getItem("authMode");
+    if(mode !== "user"){
+        sessionStorage.setItem("loginNotice", "É necessário fazer login para agendar.");
+        window.location.href = "login.html#login";
+        return;
+    }
     const hora = horaSelect.value;
     if(!hora || hora === "Nenhum horário disponível"){
         window.uiToast?.("Selecione um horário válido.");
